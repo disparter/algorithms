@@ -2,7 +2,7 @@ package br.com.github.disparter.study;
 
 public class PalindromePermutationChecker {
 
-	//I GUess this is not a palindrome definition
+	//I gUess this is not a palindrome definition
 	public static Boolean isAPalindromePermutation(String s1) {
 		char[] chars = s1.toCharArray(); 
 		char[] reverseChars = new char[chars.length];
