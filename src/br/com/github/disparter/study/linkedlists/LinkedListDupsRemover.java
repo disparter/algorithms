@@ -1,4 +1,4 @@
-package br.com.github.disparter.study;
+package br.com.github.disparter.study.linkedlists;
 
 import java.util.HashSet;
 import java.util.LinkedList;
