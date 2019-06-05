@@ -1,8 +1,8 @@
 package br.com.github.disparter.study.linkedlists;
 
-public class LinkedListIntersectionChecker {
+public class LinkedListIntersectionFinder {
 	
-	public static LinkedListNode check(LinkedListNode node1, LinkedListNode node2) {
+	public static LinkedListNode find(LinkedListNode node1, LinkedListNode node2) {
 		LinkedListNode buff1 = new LinkedListNode(node1.value, node1.next);
 		LinkedListNode buff2 = new LinkedListNode(node2.value, node2.next);
 		Integer node1Length = 0;
@@ -53,16 +53,16 @@ public class LinkedListIntersectionChecker {
 		LinkedListNode result = null;
 		
 		long start = System.currentTimeMillis();
-		result = LinkedListIntersectionChecker.check(l1, l2);
+		result = LinkedListIntersectionFinder.find(l1, l2);
 		long end = System.currentTimeMillis();
 
-		System.out.println("LL_INTERSECTION_CHECKER: " + (end-start) + " RESULT: " + result);
+		System.out.println("LL_INTERSECTION_FINDER: " + (end-start) + " RESULT: " + result);
 
 		start = System.currentTimeMillis();
-		result = LinkedListIntersectionChecker.check(l1, l3);
+		result = LinkedListIntersectionFinder.find(l1, l3);
 		end = System.currentTimeMillis();
 
-		System.out.println("LL_INTERSECTION_CHECKER: " + (end-start) + " RESULT: " + result);
+		System.out.println("LL_INTERSECTION_FINDER: " + (end-start) + " RESULT: " + result);
 		
 	}
 
