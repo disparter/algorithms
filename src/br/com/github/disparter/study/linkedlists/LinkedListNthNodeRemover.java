@@ -26,7 +26,7 @@ public class LinkedListNthNodeRemover {
 	}
 	
 	public static void main(String[] args) {
-		LinkedListNode node = LinkedListNode.randomFulfillIntegers(1000);
+		LinkedListNode node = LinkedListFiller.randomFulfillIntegers(1000);
 		LinkedListNode nNode = LinkedListNthFinder.findNthUntilLast(node, new Random().nextInt(1000));
 
 		long start = System.currentTimeMillis();
@@ -41,7 +41,7 @@ public class LinkedListNthNodeRemover {
 		
 		System.out.println("REMOVE_EL TIME: " + (end-start) + " - Number of Elements in LinkedList " +count);
 
-		node = LinkedListNode.randomFulfillIntegers(100);
+		node = LinkedListFiller.randomFulfillIntegers(100);
 		nNode = LinkedListNthFinder.findNthUntilLast(node, 100);
 
 		start = System.currentTimeMillis();

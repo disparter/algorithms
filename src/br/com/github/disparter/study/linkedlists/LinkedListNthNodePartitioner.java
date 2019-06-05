@@ -62,7 +62,7 @@ public class LinkedListNthNodePartitioner {
 	}
 	
 	public static void main(String[] args) {
-		LinkedListNode node = LinkedListNode.randomFulfillIntegers(100);
+		LinkedListNode node = LinkedListFiller.randomFulfillIntegers(100);
 		LinkedListNode testNode = new LinkedListNode(node.value, node.next);
 		LinkedListNode testNode2 = new LinkedListNode(node.value, node.next);
 

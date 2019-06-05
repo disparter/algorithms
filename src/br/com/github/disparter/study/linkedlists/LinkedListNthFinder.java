@@ -4,15 +4,17 @@ public class LinkedListNthFinder {
 	
 	public static LinkedListNode findNthUntilLast(LinkedListNode firstNode, Integer n) {
 		LinkedListNode nNode = firstNode;
+		
 		while(nNode.next != null && n > 0) {
 			nNode = nNode.next;
 			n--;
 		}
+		
 		return nNode.next;
 	}
 	
 	public static void main(String[] args) {
-		LinkedListNode node = LinkedListNode.randomFulfillIntegers(1000);
+		LinkedListNode node = LinkedListFiller.randomFulfillIntegers(1000);
 		
 		long start = System.currentTimeMillis();
 		LinkedListNode nNode = LinkedListNthFinder.findNthUntilLast(node, 999);
