@@ -4,20 +4,36 @@ import java.util.Random;
 
 public class LinkedListFiller {
 
+	private static LinkedListNode head;
+
 	public static LinkedListNode randomFulfillIntegers(int maxIndex) {
-		 return new LinkedListNode(0, getNewUntilMax(0, maxIndex, 100));
+		head = new LinkedListNode(0, getNewUntilMax(0, maxIndex, 100, Boolean.FALSE));
+		return head;
 	}
-	
+
 	public static LinkedListNode randomFulfillIntegers(int maxIndex, int maxSize) {
-		 return new LinkedListNode(0, getNewUntilMax(0, maxIndex, maxSize));
+		head = new LinkedListNode(0, getNewUntilMax(0, maxIndex, maxSize, Boolean.FALSE));
+		return head;
+	}
+
+	public static LinkedListNode randomFulfillIntegers(int maxIndex, int maxSize, Boolean isCircular) {
+		head = new LinkedListNode(0, getNewUntilMax(0, maxIndex, maxSize, isCircular));
+		return head;
 	}
 	
-	private static LinkedListNode getNewUntilMax(int index, int maxIndex, int maxSize) {
+	public static LinkedListNode randomCircularListFulfillIntegers(int maxIndex) {
+		head = new LinkedListNode(0, getNewUntilMax(0, maxIndex, 100, Boolean.TRUE));
+		return head;
+	}
+
+	private static LinkedListNode getNewUntilMax(int index, int maxIndex, int maxSize, Boolean isCircular) {
 		Integer value = new Random().nextInt(maxSize);
-		if(index < maxIndex) {
-			return new LinkedListNode(value, getNewUntilMax(index+1, maxIndex, maxSize));
+		if (index < maxIndex) {
+			return new LinkedListNode(value, getNewUntilMax(index + 1, maxIndex, maxSize, isCircular));
 		}
-		return new LinkedListNode(value, null);
+		if (Boolean.TRUE.equals(isCircular)) {
+		}
+		return new LinkedListNode(value, head);
 	}
-	
+
 }
