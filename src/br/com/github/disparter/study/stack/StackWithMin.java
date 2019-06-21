@@ -1,4 +1,4 @@
-package br.com.github.disparter.study;
+package br.com.github.disparter.study.stack;
 
 import java.util.Stack;
 
