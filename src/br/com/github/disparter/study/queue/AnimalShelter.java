@@ -24,7 +24,20 @@ public class AnimalShelter {
 	}
 	
 	public Animal dequeue() {
-		return animals.poll();
+		if(delayedDogs.isEmpty() && delayedCats.isEmpty()) {
+			return animals.poll();
+		}else if(delayedCats.isEmpty()) {
+			return delayedDogs.poll();
+		}else if(delayedDogs.isEmpty()) {
+			return delayedCats.poll();
+		}
+		
+		if(delayedDogs.peek().arrival.before(delayedCats.peek().arrival)) {
+			return delayedDogs.poll();
+		}
+		
+		return delayedCats.poll();
+		
 	}
 	
 	public Dog dequeueDog() {
@@ -73,7 +86,7 @@ public class AnimalShelter {
 	
 	public static void main(String[] args) {
 		AnimalShelter shelter = new AnimalShelter();
-		for(int i = 0; i < 1000; i++) {
+		for(int i = 0; i < 100000; i++) {
 			Animal animal = null;
 			if(i%2==0) {
 				animal = shelter.createDog(i);
